@@ -1,20 +1,20 @@
-D:\C#\QLTV\QLTV\bin\Debug\QLTV.exe.config
-D:\C#\QLTV\QLTV\bin\Debug\QLTV.exe
-D:\C#\QLTV\QLTV\bin\Debug\QLTV.pdb
-D:\C#\QLTV\QLTV\bin\Debug\System.Configuration.ConfigurationManager.dll
-D:\C#\QLTV\QLTV\bin\Debug\System.Security.AccessControl.dll
-D:\C#\QLTV\QLTV\bin\Debug\System.Security.Permissions.dll
-D:\C#\QLTV\QLTV\bin\Debug\System.Security.Principal.Windows.dll
-D:\C#\QLTV\QLTV\bin\Debug\System.Configuration.ConfigurationManager.xml
-D:\C#\QLTV\QLTV\bin\Debug\System.Security.AccessControl.xml
-D:\C#\QLTV\QLTV\bin\Debug\System.Security.Permissions.xml
-D:\C#\QLTV\QLTV\bin\Debug\System.Security.Principal.Windows.xml
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_Muon_TraSach.resources
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.Properties.Resources.resources
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.ThuVien.resources
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.csproj.GenerateResource.cache
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.csproj.CopyComplete
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.exe
-D:\C#\QLTV\QLTV\obj\Debug\QLTV.pdb
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_Muon_TraSach.resources
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_TraCuuTheoNXB_TacGia.resources
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.Properties.Resources.resources
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.ThuVien.resources
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.csproj.GenerateResource.cache
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\QLTV.exe.config
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\QLTV.exe
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\QLTV.pdb
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Security.AccessControl.dll
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Security.Permissions.dll
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Security.Principal.Windows.dll
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Security.AccessControl.xml
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Security.Permissions.xml
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Security.Principal.Windows.xml
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.csproj.CopyComplete
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.exe
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.pdb

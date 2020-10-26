@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLTV.Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
