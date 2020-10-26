@@ -13,7 +13,7 @@ namespace QLTV.Control
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
-        {//
+        {
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -145,6 +145,7 @@ namespace QLTV.Control
             this.btnThemMoiTG.TabIndex = 31;
             this.btnThemMoiTG.Text = "Thêm mới";
             this.btnThemMoiTG.UseVisualStyleBackColor = true;
+            this.btnThemMoiTG.Click += new System.EventHandler(this.btnThemMoiTG_Click);
             // 
             // btnXoaTG
             // 
@@ -157,6 +158,7 @@ namespace QLTV.Control
             this.btnXoaTG.TabIndex = 0;
             this.btnXoaTG.Text = "Xóa";
             this.btnXoaTG.UseVisualStyleBackColor = true;
+            this.btnXoaTG.Click += new System.EventHandler(this.btnXoaTG_Click);
             // 
             // btnLuuTG
             // 
@@ -169,6 +171,7 @@ namespace QLTV.Control
             this.btnLuuTG.TabIndex = 0;
             this.btnLuuTG.Text = "Lưu";
             this.btnLuuTG.UseVisualStyleBackColor = true;
+            this.btnLuuTG.Click += new System.EventHandler(this.btnLuuTG_Click);
             // 
             // btnTraCuuTG
             // 
@@ -181,6 +184,7 @@ namespace QLTV.Control
             this.btnTraCuuTG.TabIndex = 0;
             this.btnTraCuuTG.Text = "Tra cứu";
             this.btnTraCuuTG.UseVisualStyleBackColor = true;
+            this.btnTraCuuTG.Click += new System.EventHandler(this.btnTraCuuTG_Click);
             // 
             // label3
             // 
@@ -203,6 +207,7 @@ namespace QLTV.Control
             this.btnCapNhatTG.TabIndex = 0;
             this.btnCapNhatTG.Text = "Cập nhật";
             this.btnCapNhatTG.UseVisualStyleBackColor = true;
+            this.btnCapNhatTG.Click += new System.EventHandler(this.btnCapNhatTG_Click);
             // 
             // label4
             // 
@@ -232,7 +237,7 @@ namespace QLTV.Control
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(689, 303);
+            this.groupBox3.Size = new System.Drawing.Size(689, 479);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin Tác giả";
@@ -269,6 +274,7 @@ namespace QLTV.Control
             this.lvwNXB.TabIndex = 34;
             this.lvwNXB.UseCompatibleStateImageBehavior = false;
             this.lvwNXB.View = System.Windows.Forms.View.Details;
+            this.lvwNXB.SelectedIndexChanged += new System.EventHandler(this.lvwNXB_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -318,6 +324,7 @@ namespace QLTV.Control
             this.btnXoaNXB.TabIndex = 0;
             this.btnXoaNXB.Text = "Xóa";
             this.btnXoaNXB.UseVisualStyleBackColor = true;
+            this.btnXoaNXB.Click += new System.EventHandler(this.btnXoaNXB_Click);
             // 
             // btnLuuNXB
             // 
@@ -330,6 +337,7 @@ namespace QLTV.Control
             this.btnLuuNXB.TabIndex = 0;
             this.btnLuuNXB.Text = "Lưu";
             this.btnLuuNXB.UseVisualStyleBackColor = true;
+            this.btnLuuNXB.Click += new System.EventHandler(this.btnLuuNXB_Click);
             // 
             // btnTraCuuNXB
             // 
@@ -342,6 +350,7 @@ namespace QLTV.Control
             this.btnTraCuuNXB.TabIndex = 0;
             this.btnTraCuuNXB.Text = "Tra cứu";
             this.btnTraCuuNXB.UseVisualStyleBackColor = true;
+            this.btnTraCuuNXB.Click += new System.EventHandler(this.btnTraCuuNXB_Click);
             // 
             // btnCapNhatNXB
             // 
@@ -354,6 +363,7 @@ namespace QLTV.Control
             this.btnCapNhatNXB.TabIndex = 0;
             this.btnCapNhatNXB.Text = "Cập nhật";
             this.btnCapNhatNXB.UseVisualStyleBackColor = true;
+            this.btnCapNhatNXB.Click += new System.EventHandler(this.btnCapNhatNXB_Click);
             // 
             // groupBox1
             // 
@@ -419,6 +429,7 @@ namespace QLTV.Control
             this.Controls.Add(this.groupBox1);
             this.Name = "Usc_TraCuuTheoNXB_TacGia";
             this.Size = new System.Drawing.Size(1445, 658);
+            this.Load += new System.EventHandler(this.Usc_TraCuuTheoNXB_TacGia_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

@@ -157,7 +157,7 @@ namespace QLTV
             this.tabMuon_TraSach.Location = new System.Drawing.Point(4, 29);
             this.tabMuon_TraSach.Name = "tabMuon_TraSach";
             this.tabMuon_TraSach.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMuon_TraSach.Size = new System.Drawing.Size(1916, 394);
+            this.tabMuon_TraSach.Size = new System.Drawing.Size(1405, 503);
             this.tabMuon_TraSach.TabIndex = 2;
             this.tabMuon_TraSach.Text = "Mượn - Trả  Sách";
             this.tabMuon_TraSach.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@ namespace QLTV
             this.tabDanhMucSach.Location = new System.Drawing.Point(4, 29);
             this.tabDanhMucSach.Name = "tabDanhMucSach";
             this.tabDanhMucSach.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDanhMucSach.Size = new System.Drawing.Size(1916, 394);
+            this.tabDanhMucSach.Size = new System.Drawing.Size(1405, 503);
             this.tabDanhMucSach.TabIndex = 4;
             this.tabDanhMucSach.Text = "Danh Mục Sách";
             this.tabDanhMucSach.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@ namespace QLTV
             this.tabTraCuu_NhaSX_TacGia.Location = new System.Drawing.Point(4, 29);
             this.tabTraCuu_NhaSX_TacGia.Name = "tabTraCuu_NhaSX_TacGia";
             this.tabTraCuu_NhaSX_TacGia.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTraCuu_NhaSX_TacGia.Size = new System.Drawing.Size(1916, 394);
+            this.tabTraCuu_NhaSX_TacGia.Size = new System.Drawing.Size(1405, 503);
             this.tabTraCuu_NhaSX_TacGia.TabIndex = 5;
             this.tabTraCuu_NhaSX_TacGia.Text = "Tra Cứu Theo NSX_Tác Giả";
             this.tabTraCuu_NhaSX_TacGia.UseVisualStyleBackColor = true;
@@ -188,7 +188,7 @@ namespace QLTV
             this.tabTraCuuTheoDauSach_TheLoai_TuaSach.Location = new System.Drawing.Point(4, 29);
             this.tabTraCuuTheoDauSach_TheLoai_TuaSach.Name = "tabTraCuuTheoDauSach_TheLoai_TuaSach";
             this.tabTraCuuTheoDauSach_TheLoai_TuaSach.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTraCuuTheoDauSach_TheLoai_TuaSach.Size = new System.Drawing.Size(1916, 394);
+            this.tabTraCuuTheoDauSach_TheLoai_TuaSach.Size = new System.Drawing.Size(1405, 503);
             this.tabTraCuuTheoDauSach_TheLoai_TuaSach.TabIndex = 6;
             this.tabTraCuuTheoDauSach_TheLoai_TuaSach.Text = "Tra Cứu TheoThể loại_Tựa Sách";
             this.tabTraCuuTheoDauSach_TheLoai_TuaSach.UseVisualStyleBackColor = true;
