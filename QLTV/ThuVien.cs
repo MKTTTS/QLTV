@@ -28,6 +28,8 @@ namespace QLTV
 
         private void ThuVien_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             LoadUserconTrol();
         }
         public void LoadUserconTrol()

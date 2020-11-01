@@ -18,3 +18,25 @@ E:\Desktop\Thực tập nhóm\QLTV\QLTV\bin\Debug\System.Security.Principal.Wind
 E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.csproj.CopyComplete
 E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.exe
 E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.pdb
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\QLTV.exe.config
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\QLTV.exe
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\QLTV.pdb
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\System.Security.AccessControl.dll
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\System.Security.Permissions.dll
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\System.Security.AccessControl.xml
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\System.Security.Permissions.xml
+C:\Users\admin\Desktop\Son\QLTV\QLTV\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_DanhMucSach.resources
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_Muon_TraSach.resources
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_TraCuuTheoNXB_TacGia.resources
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.Properties.Resources.resources
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.ThuVien.resources
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.csproj.CopyComplete
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.exe
+C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.pdb
