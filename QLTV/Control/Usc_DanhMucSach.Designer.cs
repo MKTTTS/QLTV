@@ -174,6 +174,7 @@ namespace QLTV.Control
             this.btnLuuDMS.TabIndex = 26;
             this.btnLuuDMS.Text = "Lưu";
             this.btnLuuDMS.UseVisualStyleBackColor = true;
+            this.btnLuuDMS.Click += new System.EventHandler(this.btnLuuDMS_Click);
             // 
             // btnTraCuuDMS
             // 
@@ -186,6 +187,7 @@ namespace QLTV.Control
             this.btnTraCuuDMS.TabIndex = 27;
             this.btnTraCuuDMS.Text = "Tra cứu";
             this.btnTraCuuDMS.UseVisualStyleBackColor = true;
+            this.btnTraCuuDMS.Click += new System.EventHandler(this.btnTraCuuDMS_Click);
             // 
             // btnXoaDMS
             // 
@@ -210,6 +212,7 @@ namespace QLTV.Control
             this.btnCapNhatDMS.TabIndex = 23;
             this.btnCapNhatDMS.Text = "Cập Nhật";
             this.btnCapNhatDMS.UseVisualStyleBackColor = true;
+            this.btnCapNhatDMS.Click += new System.EventHandler(this.btnCapNhatDMS_Click);
             // 
             // btnThemMoiDMS
             // 
@@ -241,6 +244,7 @@ namespace QLTV.Control
             this.cboMaDauSachDMS.Name = "cboMaDauSachDMS";
             this.cboMaDauSachDMS.Size = new System.Drawing.Size(268, 32);
             this.cboMaDauSachDMS.TabIndex = 16;
+            this.cboMaDauSachDMS.SelectedIndexChanged += new System.EventHandler(this.cboMaDauSachDMS_SelectedIndexChanged);
             // 
             // label5
             // 

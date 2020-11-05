@@ -17,6 +17,12 @@ namespace QLTV.Control
         {
             InitializeComponent();
         }
+        #region  các hàm xử lí
+        /// <summary>
+        /// lấy mã tựa sách bằng mã đầu sách
+        /// </summary>
+        /// <param name="MaDauSach">mã đầu sách</param>
+        /// <returns>mã tựa sách</returns>
         string GetMaTuaSach(string MaDauSach)
         {
             string MaTuaSach = "";
@@ -35,6 +41,14 @@ namespace QLTV.Control
             }
             return MaTuaSach;
         }
+
+
+
+        /// <summary>
+        /// lấy tên mã thể loại bằng Mã tựa sách trong bảng tựa sách
+        /// </summary>
+        /// <param name="MaTuaSach">mã tựa sách</param>
+        /// <returns>mã thể loại</returns>
         string GetMaTheLoai(string MaTuaSach)
         {
             string matheloai = "";
@@ -54,6 +68,12 @@ namespace QLTV.Control
 
             return matheloai;
         }
+
+        /// <summary>
+        /// get tên thể loại bằng mã thể loại trong bảng thể loại
+        /// </summary>
+        /// <param name="MaTheLoai">mã thể loại</param>
+        /// <returns>tên thể loại</returns>
         string GetTenTheLoai(string MaTheLoai)
         {
             string tentheloai = "";
@@ -73,6 +93,12 @@ namespace QLTV.Control
 
             return tentheloai;
         }
+
+        /// <summary>
+        /// get mã tác giả bằng mã tựa sách trong table tựa sách 
+        /// </summary>
+        /// <param name="MaTuaSach">mã tựa sách</param>
+        /// <returns>mã tác giả</returns>
         string GetMaTacGia(string MaTuaSach)
         {
             string matacgia = "";
@@ -92,6 +118,12 @@ namespace QLTV.Control
 
             return matacgia;
         }
+
+        /// <summary>
+        /// get tên tựa sách
+        /// </summary>
+        /// <param name="MaTuaSach">Mã tựa sách</param>
+        /// <returns></returns>
         string GetTenTuaSach(string MaTuaSach)
         {
             string tentuasach = "";
@@ -111,6 +143,12 @@ namespace QLTV.Control
 
             return tentuasach;
         }
+
+        /// <summary>
+        /// gét nội dung cuốn sách
+        /// </summary>
+        /// <param name="MaTuaSach">mã tựa sách</param>
+        /// <returns>nội dung tóm tắt</returns>
         string GetNDTomTat(string MaTuaSach)
         {
             string ndTomTat = "";
@@ -130,6 +168,12 @@ namespace QLTV.Control
 
             return ndTomTat;
         }
+
+        /// <summary>
+        /// lấy tên tác giả bẳng mã tác giả
+        /// </summary>
+        /// <param name="MaTacGia">mã tác giả</param>
+        /// <returns>tên tác giả</returns>
         string GetTacGia(string MaTacGia)
         {
             string tentacgia = "";
@@ -171,12 +215,81 @@ namespace QLTV.Control
                 }
             }
         }
+        void XoaSach(string MaSach)
+        {
+            CuonSachBLL aaa = new CuonSachBLL(MaSach);
+            int kq = aaa.Xoa();
+
+            switch (kq)
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HienThiSach();
+                        break;
+                    }
+                case 1:
+                    {
+                        MessageBox.Show("Xóa Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
+                case 2:
+                    {
+                        MessageBox.Show("Không Tồn Tại Mã Phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtMaSachDMS.Focus();
+                        break;
+                    }
+            }
+        }
+
+        /// <summary>
+        /// load mã đầu sách lên combobox
+        /// </summary>
         void LoadMaDauSach()
         {
             cboMaDauSachDMS.DisplayMember = "MaDauSach";
             cboMaDauSachDMS.ValueMember = "MaDauSach";
             cboMaDauSachDMS.DataSource = new DauSachBLL().truyXuatDuLieuBang_DauSach();
         }
+
+        /// <summary>
+        /// load mã tên loại sách lên combobox
+        /// </summary>
+        //void LoadLoaiSach()
+        //{
+        //    cboLoaiSachDMS.DisplayMember = "TenLoaiSach";
+        //    cboLoaiSachDMS.ValueMember = "MaLoaiSach";
+        //    cboLoaiSachDMS.DataSource = new TheLoaiBLL().truyXuatDuLieuBang_TheLoai();
+        //}
+
+
+        /// <summary>
+        /// load mã tên tác giả lên combobox
+        /// </summary>
+        //void LoadTacGia()
+        //{
+        //    cboTacGiaDMS.DisplayMember = "TenTacGia";
+        //    cboTacGiaDMS.ValueMember = "MaTacGia";
+        //    cboTacGiaDMS.DataSource = new TacGiaBLL().truyXuatDuLieuBang_TacGia();
+        //}
+
+
+        /// <summary>
+        /// load mã tên tựa sách lên combobox
+        /// </summary>
+        //void LoadTuaSach()
+        //{
+        //    cboMaTuaSachDMS.DisplayMember = "TenTuaSach";
+        //    cboMaTuaSachDMS.ValueMember = "MaTuaSach";
+        //    cboMaTuaSachDMS.DataSource = new TuaSachBLL().truyXuatDuLieuBang_TuaSach();
+        //}
+
+
+
+        /// <summary>
+        /// hiển thị danh sách theo mã
+        /// </summary>
+        /// <param name="MaCuonSach">mã cuốn sách</param>
         void HienThiSachTheoMa(string MaCuonSach)
         {
             DataTable dt = new CuonSachBLL().truyXuatDuLieuBang_CuonSach();
@@ -244,32 +357,6 @@ namespace QLTV.Control
                         break;
                     }
 
-            }
-        }
-        void XoaSach(string MaSach)
-        {
-            CuonSachBLL aaa = new CuonSachBLL(MaSach);
-            int kq = aaa.Xoa();
-
-            switch (kq)
-            {
-                case 0:
-                    {
-                        MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        HienThiSach();
-                        break;
-                    }
-                case 1:
-                    {
-                        MessageBox.Show("Xóa Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    }
-                case 2:
-                    {
-                        MessageBox.Show("Không Tồn Tại Mã Phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txtMaSachDMS.Focus();
-                        break;
-                    }
             }
         }
         void CapNhatSach(string MaCuonSach, string TenCuonSach, string MaDauSach, string TinhTrang)
@@ -364,6 +451,9 @@ namespace QLTV.Control
             }
         }
 
+
+        #endregion
+
         private void btnThemMoiDMS_Click(object sender, EventArgs e)
         {
             HienThiSach();
@@ -383,13 +473,6 @@ namespace QLTV.Control
             txtMaSachDMS.Focus();
         }
 
-        private void Usc_DanhMucSach_Load(object sender, EventArgs e)
-        {
-            HienThiSach();
-            LoadMaDauSach();
-            btnCapNhatDMS.Enabled = false;
-            btnXoaDMS.Enabled = false;
-        }
         private void btnXoaDMS_Click(object sender, EventArgs e)
         {
             if (txtMaSachDMS.Text.Trim() == "")
@@ -412,7 +495,13 @@ namespace QLTV.Control
             }
         }
 
-        
+        private void Usc_DanhMucSach_Load(object sender, EventArgs e)
+        {
+            HienThiSach();
+            LoadMaDauSach();
+            btnCapNhatDMS.Enabled = false;
+            btnXoaDMS.Enabled = false;
+        }
 
         private void lwvDanhMucSach_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -436,6 +525,69 @@ namespace QLTV.Control
 
         }
 
+        private void btnCapNhatDMS_Click(object sender, EventArgs e)
+        {
+            if (txtMaSachDMS.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa Nhập Mã  cuốn Sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMaSachDMS.Focus();
+                return;
+            }
+            if (txtTenSachDMS.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa Nhập Tên sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenSachDMS.Focus();
+                return;
+            }
 
+            if (cboMaDauSachDMS.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa Nhập mã đầu sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboMaDauSachDMS.Focus();
+                return;
+            }
+            string TinhTrang = (radDaMuon.Checked) ? "Đã Mượn" : "Chưa Mượn";
+            CapNhatSach(txtMaSachDMS.Text.Trim(), txtTenSachDMS.Text.Trim(), cboMaDauSachDMS.SelectedValue.ToString(), TinhTrang);
+        }
+
+        private void btnTraCuuDMS_Click(object sender, EventArgs e)
+        {
+            TraCuu();
+        }
+
+        private void btnLuuDMS_Click(object sender, EventArgs e)
+        {
+            if (txtMaSachDMS.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa Nhập Mã cuốn sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMaSachDMS.Focus();
+                return;
+            }
+            if (txtTenSachDMS.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa Nhập tên cuốn sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenSachDMS.Focus();
+                return;
+            }
+            if (cboMaDauSachDMS.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa Nhập mã đầu sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenSachDMS.Focus();
+                return;
+            }
+            LuuMoiSach(txtMaSachDMS.Text.Trim(), txtTenSachDMS.Text.Trim(), cboMaDauSachDMS.SelectedValue.ToString(), radChuaMuon.Text);
+
+        }
+
+        private void cboMaDauSachDMS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboMaDauSachDMS.SelectedValue.ToString() != null)
+            {
+                lblLoaiSachDMS.Text = GetTenTheLoai(GetMaTheLoai(GetMaTuaSach(cboMaDauSachDMS.SelectedValue.ToString())));
+                lblTacGiaDMS.Text = GetTacGia(GetMaTacGia(GetMaTuaSach(cboMaDauSachDMS.SelectedValue.ToString())));
+                lblTuaSachDMS.Text = GetTenTuaSach(GetMaTuaSach(cboMaDauSachDMS.SelectedValue.ToString()));
+            }
+        }
     }
+
 }
