@@ -197,6 +197,7 @@ namespace QLTV.Control
             this.btnXoaDMS.TabIndex = 25;
             this.btnXoaDMS.Text = "Xóa";
             this.btnXoaDMS.UseVisualStyleBackColor = true;
+            this.btnXoaDMS.Click += new System.EventHandler(this.btnXoaDMS_Click);
             // 
             // btnCapNhatDMS
             // 
@@ -380,6 +381,7 @@ namespace QLTV.Control
             this.lwvDanhMucSach.TabIndex = 12;
             this.lwvDanhMucSach.UseCompatibleStateImageBehavior = false;
             this.lwvDanhMucSach.View = System.Windows.Forms.View.Details;
+            this.lwvDanhMucSach.SelectedIndexChanged += new System.EventHandler(this.lwvDanhMucSach_SelectedIndexChanged);
             // 
             // Usc_DanhMucSach
             // 

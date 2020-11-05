@@ -177,6 +177,193 @@ namespace QLTV.Control
             cboMaDauSachDMS.ValueMember = "MaDauSach";
             cboMaDauSachDMS.DataSource = new DauSachBLL().truyXuatDuLieuBang_DauSach();
         }
+        void HienThiSachTheoMa(string MaCuonSach)
+        {
+            DataTable dt = new CuonSachBLL().truyXuatDuLieuBang_CuonSach();
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (dr["MaCuonSach"].ToString() == MaCuonSach)
+                    {
+                        txtMaSachDMS.Text = dr["MaCuonSach"].ToString();
+                        txtTenSachDMS.Text = dr["TenCuonSach"].ToString();
+                        lblTuaSachDMS.Text = Convert.ToString((GetMaTuaSach(dr["MaDauSach"].ToString())));
+                        cboMaDauSachDMS.SelectedValue = dr["MaDauSach"];
+                        lblTacGiaDMS.Text = Convert.ToString((GetMaTacGia(GetMaTuaSach(dr["MaDauSach"].ToString()))));
+                        lblLoaiSachDMS.Text = Convert.ToString(GetMaTheLoai(GetMaTuaSach(dr["MaDauSach"].ToString())));
+
+                        if ((bool)dr["TinhTrang"] == false)
+                            radChuaMuon.Checked = true;
+                        else
+                            radDaMuon.Checked = true;
+                        txtNoiDungTomLuocDMS.Text = GetNDTomTat(GetMaTuaSach(dr["MaDauSach"].ToString()));
+
+
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// nhập thêm sách vào kho
+        /// </summary>
+        /// <param name="MaCuonSach">mã cuốn sách</param>
+        /// <param name="TenCuonSach">tên cuốn sách</param>
+        /// <param name="MaDauSach">mã đầu sách</param>
+        /// <param name="TinhTrang">tình trạng</param>
+        void LuuMoiSach(string MaCuonSach, string TenCuonSach, string MaDauSach, string TinhTrang)
+        {
+
+            CuonSachBLL cls = new CuonSachBLL(MaCuonSach, TenCuonSach, MaDauSach, TinhTrang);
+
+            int kq = cls.Them();
+
+            switch (kq)
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HienThiSach();
+                        break;
+                    }
+                case 1:
+                    {
+                        MessageBox.Show("Thêm Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
+                case 2:
+                    {
+                        MessageBox.Show("Trùng Mã Cuốn Sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtMaSachDMS.Focus();
+                        break;
+                    }
+                case 3:
+                    {
+                        MessageBox.Show("Không Có Mã đầu sach`", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+
+            }
+        }
+        void XoaSach(string MaSach)
+        {
+            CuonSachBLL aaa = new CuonSachBLL(MaSach);
+            int kq = aaa.Xoa();
+
+            switch (kq)
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HienThiSach();
+                        break;
+                    }
+                case 1:
+                    {
+                        MessageBox.Show("Xóa Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
+                case 2:
+                    {
+                        MessageBox.Show("Không Tồn Tại Mã Phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtMaSachDMS.Focus();
+                        break;
+                    }
+            }
+        }
+        void CapNhatSach(string MaCuonSach, string TenCuonSach, string MaDauSach, string TinhTrang)
+        {
+            CuonSachBLL cls = new CuonSachBLL(MaCuonSach, TenCuonSach, MaDauSach, TinhTrang);
+
+            int kq = cls.CapNhat();
+
+            switch (kq)
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Cập Nhật Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HienThiSach();
+                        break;
+                    }
+                case 1:
+                    {
+                        MessageBox.Show("Cập Nhật Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
+                case 2:
+                    {
+                        MessageBox.Show("Không Có Mã cuốn sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtMaSachDMS.Focus();
+                        break;
+                    }
+                case 3:
+                    {
+                        MessageBox.Show("Không Có Mã đầu sach`", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                case 4:
+                    {
+                        MessageBox.Show("sách đang được mượn không thể cập nhật.!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+            }
+        }
+
+
+        bool KiemTra(string MaCuonSach, string TenCuonSach, string MaDauSach, bool TinhTrang)
+        {
+            bool bolMaCuonSach = false, bolTenCuonSach = false, bolMaDauSach = false;
+            if (txtMaSachDMS.Text.Trim() != "")
+            {
+                bolMaCuonSach = MaCuonSach.ToLower().Contains(txtMaSachDMS.Text.ToLower()) ? true : false;
+            }
+            if (txtTenSachDMS.Text.Trim() != "")
+            {
+                bolTenCuonSach = TenCuonSach.ToLower().Contains(txtTenSachDMS.Text.ToLower()) ? true : false;
+            }
+            if (cboMaDauSachDMS.SelectedValue.ToString() != "")
+            {
+                bolMaDauSach = MaDauSach.ToLower().Contains(cboMaDauSachDMS.SelectedValue.ToString().ToLower()) ? true : false;
+            }
+
+            if (bolMaCuonSach || bolTenCuonSach || bolMaDauSach || TinhTrang)
+                return true;
+
+            return false;
+        }
+
+        void TraCuu()
+        {
+            DataTable dt = new CuonSachBLL().truyXuatDuLieuBang_CuonSach();
+            if (dt.Rows.Count > 0)
+            {
+                lwvDanhMucSach.Items.Clear();
+                int i = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (KiemTra(dr["MaCuonSach"].ToString(), dr["TenCuonSach"].ToString(), dr["MaDauSach"].ToString(), (bool)dr["TinhTrang"]))
+                    {
+                        i++;
+                        ListViewItem li = lwvDanhMucSach.Items.Add(i.ToString());
+                        li.SubItems.Add(dr["TenCuonSach"].ToString());
+                        li.SubItems.Add(dr["MaDauSach"].ToString());
+                        li.SubItems.Add(GetTenTheLoai(GetMaTheLoai(GetMaTuaSach(dr["MaDauSach"].ToString()))));
+                        li.SubItems.Add(GetTacGia(GetMaTacGia(GetMaTuaSach(dr["MaDauSach"].ToString()))));
+
+                        string tinhtrang = ((bool)dr["TinhTrang"]) ? "Đã Mượn" : "Chưa Mượn";
+                        li.SubItems.Add(tinhtrang);
+
+
+                        lwvDanhMucSach.Tag = dr["MaCuonSach"].ToString();
+                    }
+
+                }
+
+
+            }
+        }
+
         private void btnThemMoiDMS_Click(object sender, EventArgs e)
         {
             HienThiSach();
@@ -203,5 +390,52 @@ namespace QLTV.Control
             btnCapNhatDMS.Enabled = false;
             btnXoaDMS.Enabled = false;
         }
+        private void btnXoaDMS_Click(object sender, EventArgs e)
+        {
+            if (txtMaSachDMS.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa Nhập Mã Sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMaSachDMS.Focus();
+                return;
+            }
+
+            if (radChuaMuon.Checked == true)
+            {
+                XoaSach(txtMaSachDMS.Text.Trim());
+                lwvDanhMucSach.Items.Clear();
+                HienThiSach();
+                txtMaSachDMS.Focus();
+            }
+            else if (radChuaMuon.Checked == false)
+            {
+                MessageBox.Show("Sách này đang cho đọc giả mượn,không xóa được", "Lỗi");
+            }
+        }
+
+        
+
+        private void lwvDanhMucSach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lwvDanhMucSach.SelectedItems.Count > 0)
+            {
+
+                foreach (int i in lwvDanhMucSach.SelectedIndices)
+                {
+                    string MaCuonSach = lwvDanhMucSach.Items[i].Tag.ToString();
+                    HienThiSachTheoMa(MaCuonSach);
+                    radDaMuon.Enabled = false;
+                    radChuaMuon.Enabled = false;
+                    break;
+                }
+            }
+            btnXoaDMS.Enabled = true;
+            btnCapNhatDMS.Enabled = true;
+            btnLuuDMS.Enabled = false;
+            btnTraCuuDMS.Enabled = false;
+
+
+        }
+
+
     }
 }
