@@ -216,6 +216,7 @@ namespace QLTV.Control
                this.btnXoaDocGia.TabIndex = 36;
                this.btnXoaDocGia.Text = "Xóa";
                this.btnXoaDocGia.UseVisualStyleBackColor = true;
+               this.btnXoaDocGia.Click += new System.EventHandler(this.btnXoaDocGia_Click);
                // 
                // btnLuuDocGia
                // 
@@ -229,6 +230,7 @@ namespace QLTV.Control
                this.btnLuuDocGia.TabIndex = 37;
                this.btnLuuDocGia.Text = "Lưu";
                this.btnLuuDocGia.UseVisualStyleBackColor = true;
+               this.btnLuuDocGia.Click += new System.EventHandler(this.btnLuuDocGia_Click);
                // 
                // dtbNgaySinh
                // 

@@ -148,5 +148,121 @@ namespace QLTV.Control
 
                CapNhatDocGia(txtMaDocGia.Text.Trim(), ho, tenLot, ten, dtbNgaySinh.Value, sonha, duong, quan, txtSoDienThoaiDG.Text, dtNgayDangKi.Value, dtNgayHetHan.Value);
           }
+
+          void XoaDocGia(string MaDocGia)
+          {
+               DocGiaBLL cls = new DocGiaBLL(MaDocGia);
+               int kq = cls.Xoa();
+
+               switch (kq)
+               {
+                    case 0:
+                         {
+                              MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                              LoadDocGia();
+                              break;
+                         }
+                    case 1:
+                         {
+                              MessageBox.Show("Xóa Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                              break;
+                         }
+                    case 2:
+                         {
+                              MessageBox.Show("Không Tồn Tại Mã đọc giả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                              break;
+                         }
+                    case 3:
+                         {
+                              MessageBox.Show("Đọc gỉa này đang mượn sách.Không thể xóa được", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                              break;
+                         }
+               }
+          }
+
+          private void btnXoaDocGia_Click(object sender, EventArgs e)
+          {
+               if (txtMaDocGia.Text.Trim() == "")
+               {
+                    MessageBox.Show("Chưa Nhập Mã đọc giả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+               }
+
+               XoaDocGia(txtMaDocGia.Text);
+               btnThemMoiDocGia_Click(sender, e);
+          }
+
+          void LuuMoiDocGia(string MaDocGia, string HoDocGia, string TenLotDocGia, string TenDocGia, DateTime NgaySinh, string SoNha, string Duong,
+           string Quan, string SoDienThoai, DateTime NgayDangKi, DateTime NgayHethanDK)
+          {
+
+               DocGiaBLL cls = new DocGiaBLL(MaDocGia, HoDocGia, TenLotDocGia, TenDocGia, NgaySinh, SoNha, Duong, Quan, SoDienThoai, NgayDangKi, NgayHethanDK);
+
+               int kq = cls.Them();
+
+               switch (kq)
+               {
+                    case 0:
+                         {
+                              MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                              LoadDocGia();
+                              break;
+                         }
+                    case 1:
+                         {
+                              MessageBox.Show("Thêm Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                              break;
+                         }
+                    case 2:
+                         {
+                              MessageBox.Show("Trùng Mã đọc giả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                              txtMaDocGia.Focus();
+                              break;
+                         }
+
+               }
+          }
+
+          private void btnLuuDocGia_Click(object sender, EventArgs e)
+          {
+               if (txtMaDocGia.Text.Trim() == "")
+               {
+                    MessageBox.Show("Chưa Nhập Mã đọc giả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMaDocGia.Focus();
+                    return;
+               }
+               if (txtHoTenDocGia.Text.Trim() == "")
+               {
+                    MessageBox.Show("Chưa Nhập tên đọc giả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtHoTenDocGia.Focus();
+                    return;
+               }
+
+
+               //tách họ tên            
+               string ho = "", ten = "", tenLot = "", hoTen = ""; int a, b, lengh;
+               hoTen = Convert.ToString(txtHoTenDocGia.Text).Trim();
+               lengh = hoTen.LastIndexOf("");
+               a = hoTen.IndexOf(" ");//vi tri rong dau tien
+               b = hoTen.LastIndexOf(" ");//vi tri rong cuoi
+               ho = hoTen.Substring(0, a).Trim();
+               ten = hoTen.Substring(b).Trim();
+               tenLot = hoTen.Substring(a, b - a).Trim();
+
+
+               //tách địa chỉ
+               string sonha = "", duong = "", quan = "", diachi = ""; int c, d, leng;
+               diachi = Convert.ToString(txtDiaChi.Text).Trim();
+               leng = diachi.LastIndexOf("");
+               c = diachi.IndexOf(",");//vi tri  dau tien_dấu phẩy
+               d = diachi.LastIndexOf(",");//vi tri cuoi_dấu phẩy
+               sonha = diachi.Substring(0, c).Trim();
+               quan = diachi.Substring(d + 1).Trim();
+               duong = diachi.Substring(c + 1, d - (c + 1)).Trim();
+               //giới tính
+
+
+               LuuMoiDocGia(txtMaDocGia.Text.Trim(), ho, tenLot, ten, dtbNgaySinh.Value, sonha, duong, quan, txtSoDienThoaiDG.Text, dtNgayDangKi.Value, dtNgayHetHan.Value); ;
+          }
      }
 }
