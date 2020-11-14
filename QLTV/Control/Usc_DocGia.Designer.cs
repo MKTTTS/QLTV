@@ -404,6 +404,7 @@ namespace QLTV.Control
                this.btnTraCuuDG.TabIndex = 39;
                this.btnTraCuuDG.Text = "Tra Cứu";
                this.btnTraCuuDG.UseVisualStyleBackColor = true;
+               this.btnTraCuuDG.Click += new System.EventHandler(this.btnTraCuuDG_Click);
                // 
                // dtNgayHetHan
                // 

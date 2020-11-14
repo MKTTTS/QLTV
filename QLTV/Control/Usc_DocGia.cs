@@ -264,5 +264,89 @@ namespace QLTV.Control
 
                LuuMoiDocGia(txtMaDocGia.Text.Trim(), ho, tenLot, ten, dtbNgaySinh.Value, sonha, duong, quan, txtSoDienThoaiDG.Text, dtNgayDangKi.Value, dtNgayHetHan.Value); ;
           }
+
+          bool KiemTra(string MaDocGia, string HoDocGia, string TenLotDocGia, string TenDocGia, string SoNha, string Duong,
+                           string Quan, string SoDienThoai)
+          {
+
+               bool bolMaDocGia = false, bolHoDocGia = false, bolTenLotDocGia = false; bool bolTenDocGia = false;
+               bool bolSoNha = false, bolDuong = false, bolQuan = false; bool bolSoDienThoai = false;// bolNgayDangKi = false, bolNgayHethanDk = false, bolNgaySinh = false;
+
+               if (txtMaDocGiaTC.Text.Trim() != "")
+               {
+                    bolMaDocGia = MaDocGia.ToLower().Contains(txtMaDocGiaTC.Text.ToLower()) ? true : false;
+               }
+               //lấy họ
+               if (txtHoDGTC.Text.Trim() != "")
+               {
+                    bolHoDocGia = HoDocGia.ToLower().Contains(txtHoDGTC.Text.ToLower()) ? true : false;
+               }
+
+               if (txtTenDG.Text.Trim() != "")
+               {
+                    bolTenDocGia = TenDocGia.ToLower().Contains(txtTenDG.Text.ToLower()) ? true : false;
+               }
+               if (txtTenLotDG.Text.Trim() != "")
+               {
+                    bolTenLotDocGia = TenLotDocGia.ToLower().Contains(txtTenLotDG.Text.ToLower()) ? true : false;
+               }
+               if (txtSDT_TC.Text.Trim() != "")
+               {
+                    bolSoDienThoai = SoDienThoai.ToLower().Contains(txtSDT_TC.Text.ToLower()) ? true : false;
+               }
+               if (txtSoNhaDG.Text.Trim() != "")
+               {
+                    bolSoNha = SoNha.ToLower().Contains(txtSoNhaDG.Text.ToLower()) ? true : false;
+               }
+               if (txtQuanDG.Text.Trim() != "")
+               {
+                    bolQuan = Quan.ToLower().Contains(txtQuanDG.Text.ToLower()) ? true : false;
+               }
+               //lấy đường
+               if (txtDuongDGTC.Text.Trim() != "")
+               {
+                    bolDuong = Duong.ToLower().Contains(txtDuongDGTC.Text.ToLower()) ? true : false;
+               }
+
+               if (bolMaDocGia || bolHoDocGia || bolTenLotDocGia || bolTenDocGia || bolSoDienThoai || bolSoNha || bolQuan || bolDuong)
+                    return true;
+
+
+               return false;
+          }
+          void TraCuu()
+          {
+               DataTable dt = new DocGiaBLL().truyXuatDuLieuBang_DocGia();
+               if (dt.Rows.Count > 0)
+               {
+                    lvwDSDocGia.Items.Clear();
+                    int i = 1;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                         if (KiemTra(dr["MaDocGia"].ToString(), dr["HoDocGia"].ToString(), dr["TenLotDocGia"].ToString(), dr["TenDocGia"].ToString(), dr["Sonha"].ToString(),
+                             dr["Duong"].ToString(), dr["Quan"].ToString(), dr["SoDienThoai"].ToString()))
+                         {
+                              ListViewItem li = lvwDSDocGia.Items.Add(dr["MaDocGia"].ToString());
+
+                              li.SubItems.Add(dr["HoDocGia"].ToString() + " " + dr["TenLotDocGia"].ToString() + " " + dr["TenDocGia"].ToString());
+                              li.SubItems.Add(dr["NgaySinh"].ToString());
+
+                              li.SubItems.Add(dr["SoNha"].ToString() + "," + dr["Duong"].ToString() + "," + dr["Quan"].ToString());
+                              li.SubItems.Add(dr["NgayDangKi"].ToString());
+                              li.SubItems.Add(dr["NgayHethanDK"].ToString());
+                              li.SubItems.Add(i.ToString());
+                              li.SubItems.Add(dr["SoDienThoai"].ToString());
+
+                              i++;
+                         }
+
+                    }
+               }
+          }
+
+          private void btnTraCuuDG_Click(object sender, EventArgs e)
+          {
+               TraCuu();
+          }
      }
 }
