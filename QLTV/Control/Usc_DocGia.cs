@@ -348,5 +348,41 @@ namespace QLTV.Control
           {
                TraCuu();
           }
+
+          void HienDocGiaTheoMa(string MaDocGia)
+          {
+               DataTable dt = new DocGiaBLL().truyXuatDuLieuBang_DocGia();
+               if (dt.Rows.Count > 0)
+               {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                         if (dr["MaDocGia"].ToString() == MaDocGia)
+                         {
+                              txtMaDocGia.Text = dr["MaDocGia"].ToString();
+                              txtHoTenDocGia.Text = dr["HoDocGia"].ToString() + " " + dr["TenLotDocGia"].ToString() + " " + dr["TenDocGia"].ToString();
+                              txtDiaChi.Text = dr["SoNha"].ToString() + "," + dr["Duong"].ToString() + "," + dr["Quan"].ToString(); ;
+                              dtbNgaySinh.Text = dr["NgaySinh"].ToString();
+                              dtNgayDangKi.Text = dr["NgayDangKi"].ToString();
+                              dtNgayHetHan.Text = dr["NgayHetHanDK"].ToString();
+                              txtSoDienThoaiDG.Text = dr["SoDienThoai"].ToString();
+                         }
+                    }
+               }
+          }
+
+          private void lvwDSDocGia_SelectedIndexChanged(object sender, EventArgs e)
+          {
+               foreach (int i in lvwDSDocGia.SelectedIndices)
+               {
+                    string MaDocGia = lvwDSDocGia.Items[i].Tag.ToString();
+                    HienDocGiaTheoMa(MaDocGia);
+                    break;
+               }
+               btnCapNhatDocGia.Enabled = true;
+               btnXoaDocGia.Enabled = true;
+               btnLuuDocGia.Enabled = false;
+               btnThemMoiDocGia.Enabled = true;
+               btnTraCuuDG.Enabled = false;
+          }
      }
 }

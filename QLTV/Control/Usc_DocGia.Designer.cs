@@ -566,6 +566,7 @@ namespace QLTV.Control
                this.lvwDSDocGia.TabIndex = 0;
                this.lvwDSDocGia.UseCompatibleStateImageBehavior = false;
                this.lvwDSDocGia.View = System.Windows.Forms.View.Details;
+               this.lvwDSDocGia.SelectedIndexChanged += new System.EventHandler(this.lvwDSDocGia_SelectedIndexChanged);
                // 
                // columnHeader1
                // 
