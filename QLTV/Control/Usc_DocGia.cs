@@ -336,6 +336,7 @@ namespace QLTV.Control
                               li.SubItems.Add(dr["NgayHethanDK"].ToString());
                               li.SubItems.Add(i.ToString());
                               li.SubItems.Add(dr["SoDienThoai"].ToString());
+                              li.Tag = dr["MaDocGia"].ToString();
 
                               i++;
                          }

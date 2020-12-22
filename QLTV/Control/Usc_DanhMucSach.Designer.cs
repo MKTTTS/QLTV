@@ -29,7 +29,6 @@ namespace QLTV.Control
         /// </summary>
         private void InitializeComponent()
         {
-
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTuaSachDMS = new System.Windows.Forms.Label();
             this.lblLoaiSachDMS = new System.Windows.Forms.Label();
@@ -90,11 +89,11 @@ namespace QLTV.Control
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(824, 0);
+            this.groupBox1.Location = new System.Drawing.Point(805, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(648, 717);
+            this.groupBox1.Size = new System.Drawing.Size(667, 717);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -382,21 +381,16 @@ namespace QLTV.Control
             this.lwvDanhMucSach.Location = new System.Drawing.Point(4, 4);
             this.lwvDanhMucSach.Margin = new System.Windows.Forms.Padding(4);
             this.lwvDanhMucSach.Name = "lwvDanhMucSach";
-            this.lwvDanhMucSach.Size = new System.Drawing.Size(820, 640);
+            this.lwvDanhMucSach.Size = new System.Drawing.Size(793, 709);
             this.lwvDanhMucSach.TabIndex = 12;
             this.lwvDanhMucSach.UseCompatibleStateImageBehavior = false;
             this.lwvDanhMucSach.View = System.Windows.Forms.View.Details;
             this.lwvDanhMucSach.SelectedIndexChanged += new System.EventHandler(this.lwvDanhMucSach_SelectedIndexChanged);
             // 
-
-            this.SuspendLayout();
-            // 
-
             // Usc_DanhMucSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lwvDanhMucSach);
             this.Name = "Usc_DanhMucSach";
@@ -406,11 +400,7 @@ namespace QLTV.Control
             this.groupBox1.PerformLayout();
             this.grpTinhTrang.ResumeLayout(false);
             this.grpTinhTrang.PerformLayout();
-
-            //this.Name = "Usc_DanhMucSach";
-            //this.Size = new System.Drawing.Size(752, 525);
-
-            //this.ResumeLayout(false);
+            this.ResumeLayout(false);
 
         }
 

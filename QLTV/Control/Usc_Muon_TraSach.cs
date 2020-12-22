@@ -218,7 +218,7 @@ namespace QLTV.Control
                         li.SubItems.Add(dr["NgayHenTra"].ToString());
                         li.SubItems.Add(dr["NgayTra"].ToString());
 
-                        lvwMuonSach.Tag = dr["MaMuon"].ToString();
+                        li.Tag = dr["MaMuon"].ToString();
                         i++;
                     }
 

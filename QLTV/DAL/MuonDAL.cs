@@ -39,16 +39,15 @@ namespace QLTV.DAL
             con.Close();
             return stt;
         }
-        public int Them(string maMuon, string maDocGia, string maCuonSach, int soLuong, DateTime ngayMuon, DateTime ngayHenTra, DateTime ngayTra, string ghiChu)
+        public int Them(string maMuon, string maDocGia, string maCuonSach, int soLuong, DateTime ngayMuon, DateTime ngayHenTra, string ghiChu)
         {
             //int so = stt();
 ;            if (KiemTraMaMuon_BangMuon(maMuon) == false)
             {
                 if ((KiemTraMaDocGia_BangDocGia(maDocGia) == true) && (KiemTraMaCuonSach_BangCuonSach(maCuonSach) == true))
                 {
-
-                    string strSQL = "insert into MUOn (MaMuon,MaDocGia,MaCuonSach,SoLuong,NgayMuon,NgayHenTra,NgayTra,GhiChu) " +
-                    "values('" + maMuon + "','" + maDocGia + "','" + maCuonSach + "','" + soLuong + "','" + ngayMuon + "','" + ngayHenTra + "','" + ngayTra + "','" + ghiChu + "')";
+                    string strSQL = "insert into MUOn (MaMuon,MaDocGia,MaCuonSach,SoLuong,NgayMuon,NgayHenTra,GhiChu) " +
+                    "values('" + maMuon + "','" + maDocGia + "','" + maCuonSach + "','" + soLuong + "','" + ngayMuon + "','" + ngayHenTra + "','" + ghiChu + "')";
                     return objDAconnect.ExecuteQuery(strSQL);
                 }
                 else

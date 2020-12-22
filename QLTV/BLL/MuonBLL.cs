@@ -98,7 +98,7 @@ namespace QLTV.BLL
         public int Them()
         {
             MuonDAL objMuon = new MuonDAL();
-            int kq = objMuon.Them(maMuon, maDocGia, maCuonSach, soLuong, ngayMuon, ngayHenTra, ngayTra, ghiChu);
+            int kq = objMuon.Them(maMuon, maDocGia, maCuonSach, soLuong, ngayMuon, ngayHenTra, ghiChu);
             return kq;
 
         }
