@@ -287,7 +287,7 @@ namespace QLTV.Control
 
 
 
-                        lvwTuaSach.Tag = dr["MaTuaSach"].ToString();
+                        li.Tag = dr["MaTuaSach"].ToString();
                         i++;
                     }
 
@@ -543,6 +543,30 @@ namespace QLTV.Control
 
 
             ThemThongTinTuaSach(txtMaTuaSach.Text.Trim(), txtTenTuaSach.Text.Trim(), cboMaTacGia.SelectedValue.ToString(), cboMaTheLoai.SelectedValue.ToString(), txtNDTomTat.Text.Trim());
+        }
+
+        private void btnTraCuuTL_Click(object sender, EventArgs e)
+        {
+            TraCuuTheLoai();
+        }
+
+        private void lvwTheLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwTheLoai.SelectedItems.Count > 0)
+            {
+
+                foreach (int i in lvwTheLoai.SelectedIndices)
+                {
+                    string matl = lvwTheLoai.Items[i].Tag.ToString();
+                    HienThiTheLoaiTheoMa(matl);
+                    break;
+                }
+            }
+
+            btnCapNhatTL.Enabled = true;
+            btnXoaTL.Enabled = true;
+            btnLuuTL.Enabled = false;
+            btnTraCuuTL.Enabled = false;
         }
     }
 }

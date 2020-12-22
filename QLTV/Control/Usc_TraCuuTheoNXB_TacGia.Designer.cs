@@ -94,6 +94,7 @@ namespace QLTV.Control
             this.lvwTacGia.TabIndex = 34;
             this.lvwTacGia.UseCompatibleStateImageBehavior = false;
             this.lvwTacGia.View = System.Windows.Forms.View.Details;
+            this.lvwTacGia.SelectedIndexChanged += new System.EventHandler(this.lvwTacGia_SelectedIndexChanged);
             // 
             // columnHeader7
             // 

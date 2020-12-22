@@ -312,6 +312,7 @@ namespace QLTV.Control
             this.lvwTheLoai.TabIndex = 34;
             this.lvwTheLoai.UseCompatibleStateImageBehavior = false;
             this.lvwTheLoai.View = System.Windows.Forms.View.Details;
+            this.lvwTheLoai.SelectedIndexChanged += new System.EventHandler(this.lvwTheLoai_SelectedIndexChanged);
             // 
             // columnHeader4
             // 
@@ -442,6 +443,7 @@ namespace QLTV.Control
             this.btnTraCuuTL.TabIndex = 0;
             this.btnTraCuuTL.Text = "Tra cứu";
             this.btnTraCuuTL.UseVisualStyleBackColor = true;
+            this.btnTraCuuTL.Click += new System.EventHandler(this.btnTraCuuTL_Click);
             // 
             // groupBox2
             // 

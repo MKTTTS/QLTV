@@ -442,7 +442,7 @@ namespace QLTV.Control
                         li.SubItems.Add(tinhtrang);
 
 
-                        lwvDanhMucSach.Tag = dr["MaCuonSach"].ToString();
+                        li.Tag = dr["MaCuonSach"].ToString();
                     }
 
                 }

@@ -353,7 +353,7 @@ namespace QLTV.Control
                         li.SubItems.Add(dr["MaNSX"].ToString());
                         li.SubItems.Add(dr["TenNSX"].ToString());
 
-                        lvwNXB.Tag = dr["MaNSX"].ToString();
+                        li.Tag = dr["MaNSX"].ToString();
                         i++;
                     }
                     else
@@ -383,7 +383,7 @@ namespace QLTV.Control
                         li.SubItems.Add(dr["MaTacGia"].ToString());
                         li.SubItems.Add(dr["TenTacGia"].ToString());
 
-                        lvwNXB.Tag = dr["MaTacGia"].ToString();
+                        li.Tag = dr["MaTacGia"].ToString();
                         i++;
                     }
                     else
@@ -550,6 +550,25 @@ namespace QLTV.Control
         private void btnTraCuuNXB_Click(object sender, EventArgs e)
         {
             TraCuuNSX();
+        }
+
+        private void lvwTacGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwTacGia.SelectedItems.Count > 0)
+            {
+
+                foreach (int i in lvwTacGia.SelectedIndices)
+                {
+                    string matg = lvwTacGia.Items[i].Tag.ToString();
+                    HienThiTacGiaTheoMa(matg);
+                    break;
+                }
+            }
+
+            btnCapNhatTG.Enabled = true;
+            btnXoaNXB.Enabled = true;
+            btnLuuTG.Enabled = false;
+            btnTraCuuTG.Enabled = false;
         }
     }
 }

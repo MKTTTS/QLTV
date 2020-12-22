@@ -44,3 +44,4 @@ D:\C#\QLTV\QLTV\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
 D:\C#\QLTV\QLTV\QLTV\obj\Debug\QLTV.csproj.CopyComplete
 D:\C#\QLTV\QLTV\QLTV\obj\Debug\QLTV.exe
 D:\C#\QLTV\QLTV\QLTV\obj\Debug\QLTV.pdb
+D:\C#\QLTV\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache
