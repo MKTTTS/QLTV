@@ -65,6 +65,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\TheLoaiBLL.cs" />
+    <Compile Include="BLL\TuaSachBLL.cs" />
     <Compile Include="Control\Usc_DanhMucSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +98,8 @@
       <DependentUpon>Usc_TraCuuTheoTheloai_TuaSach.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAConnect.cs" />
+    <Compile Include="DAL\TheLoaiDAL.cs" />
+    <Compile Include="DAL\TuaSachDAL.cs" />
     <Compile Include="ThuVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +108,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\Usc_DanhMucSach.resx">
+      <DependentUpon>Usc_DanhMucSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Usc_TraCuuTheoTheloai_TuaSach.resx">
+      <DependentUpon>Usc_TraCuuTheoTheloai_TuaSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -130,8 +140,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

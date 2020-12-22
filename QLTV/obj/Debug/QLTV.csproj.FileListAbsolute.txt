@@ -1,0 +1,7 @@
+C:\Users\mjnkc\Documents\GitHub\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache
+C:\Users\mjnkc\Documents\GitHub\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_DanhMucSach.resources
+C:\Users\mjnkc\Documents\GitHub\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_TraCuuTheoTheloai_TuaSach.resources
+C:\Users\mjnkc\Documents\GitHub\QLTV\QLTV\obj\Debug\QLTV.Properties.Resources.resources
+C:\Users\mjnkc\Documents\GitHub\QLTV\QLTV\obj\Debug\QLTV.ThuVien.resources
+C:\Users\mjnkc\Documents\GitHub\QLTV\QLTV\obj\Debug\QLTV.csproj.GenerateResource.cache
+C:\Users\mjnkc\Documents\GitHub\QLTV\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
