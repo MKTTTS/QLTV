@@ -40,3 +40,5 @@ C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cac
 C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.csproj.CopyComplete
 C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.exe
 C:\Users\admin\Desktop\Son\QLTV\QLTV\obj\Debug\QLTV.pdb
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache
+E:\Desktop\Thực tập nhóm\QLTV\QLTV\obj\Debug\QLTV.Control.Usc_DanhMucSach.resources
