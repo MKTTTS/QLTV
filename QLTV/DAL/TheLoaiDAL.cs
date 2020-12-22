@@ -45,7 +45,9 @@ namespace QLTV.DAL
             {
                 int so = stt();
                 //câu lệnh sql
+
                 string strSQL = "insert into THELOAI (STT,MaLoaiSach,TenLoaiSach) values(" + so + ",'" + maTheLoai + "','" + tenTheLoai + "')";
+
                 return objDAconnect.ExecuteQuery(strSQL);
 
             }

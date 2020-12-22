@@ -65,11 +65,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="BLL\CuonSachBLL.cs" />
     <Compile Include="BLL\DauSachBLL.cs" />
     <Compile Include="BLL\MuonBLL.cs" />
     <Compile Include="BLL\NhaXuatBanBLL.cs" />
     <Compile Include="BLL\TacGiaBLL.cs" />
+
     <Compile Include="BLL\TheLoaiBLL.cs" />
     <Compile Include="BLL\TuaSachBLL.cs" />
     <Compile Include="Control\Usc_DanhMucSach.cs">
@@ -104,10 +106,12 @@
     </Compile>
     <Compile Include="DAL\CuonSachDAL.cs" />
     <Compile Include="DAL\DAConnect.cs" />
+
     <Compile Include="DAL\DauSachDAL.cs" />
     <Compile Include="DAL\MuonDAL.cs" />
     <Compile Include="DAL\NhaXuatBanDAL.cs" />
     <Compile Include="DAL\TacGiaDAL.cs" />
+
     <Compile Include="DAL\TheLoaiDAL.cs" />
     <Compile Include="DAL\TuaSachDAL.cs" />
     <Compile Include="ThuVien.cs">
@@ -121,11 +125,16 @@
     <EmbeddedResource Include="Control\Usc_DanhMucSach.resx">
       <DependentUpon>Usc_DanhMucSach.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Control\Usc_Muon_TraSach.resx">
       <DependentUpon>Usc_Muon_TraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Usc_TraCuuTheoNXB_TacGia.resx">
       <DependentUpon>Usc_TraCuuTheoNXB_TacGia.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Control\Usc_TraCuuTheoTheloai_TuaSach.resx">
+      <DependentUpon>Usc_TraCuuTheoTheloai_TuaSach.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -29,6 +29,7 @@ namespace QLTV.Control
         /// </summary>
         private void InitializeComponent()
         {
+
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTuaSachDMS = new System.Windows.Forms.Label();
             this.lblLoaiSachDMS = new System.Windows.Forms.Label();
@@ -387,10 +388,15 @@ namespace QLTV.Control
             this.lwvDanhMucSach.View = System.Windows.Forms.View.Details;
             this.lwvDanhMucSach.SelectedIndexChanged += new System.EventHandler(this.lwvDanhMucSach_SelectedIndexChanged);
             // 
+
+            this.SuspendLayout();
+            // 
+
             // Usc_DanhMucSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lwvDanhMucSach);
             this.Name = "Usc_DanhMucSach";
@@ -400,7 +406,11 @@ namespace QLTV.Control
             this.groupBox1.PerformLayout();
             this.grpTinhTrang.ResumeLayout(false);
             this.grpTinhTrang.PerformLayout();
-            this.ResumeLayout(false);
+
+            //this.Name = "Usc_DanhMucSach";
+            //this.Size = new System.Drawing.Size(752, 525);
+
+            //this.ResumeLayout(false);
 
         }
 
